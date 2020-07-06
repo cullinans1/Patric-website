@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --color1: #b51230;
+    --color2: rgb(255 , 255 , 255);
+    --color3: rgb(0, 0, 0);
+    --color4: rgb(163, 153, 153);
+    --color5: rgb(236, 232, 232);
+}
+/*Header and navigation items */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--color5);
+    color: var(--color2);
+    border-bottom: solid 3px var(--color3);
+    justify-content: space-between;
+}
+#header-logo {
+    background-image: url(../assets/images/HSFull-sm.png);
+    background-size: cover;
+    background-position: center;
+    width: 25%;
+    height: 8vw;
+}
+header nav {
+    padding: 5px;
+}
+header ul {
+    list-style: none;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+}
+header li {
+    padding: 20px;
+    font-size: 2.5vw;
+    margin-right: 50px;
+}
+header a {
+    text-decoration: none;
+    color: var(--color3);
+}
+header a:hover {
+    color: var(--color1);
+}
+.logos {
+    padding: 10px;
+}
+#logo1 {
+    background-image: url(../assets/images/r.png);
+    background-size: cover;
+    background-position: center;
+    padding: 2.8vw;
+    display: inline-block;
+    margin-right: 15px;
+}
+#logo2 {
+    background-image: url(../assets/images/fair-housing.png);
+    background-size: cover;
+    background-position: center;
+    padding: 3vw;
+    display: inline-block;
+}
+/*Jumbotron styling */
+.jumbotron {
+    background-image: url(../assets/images/house.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 200px;
+}
