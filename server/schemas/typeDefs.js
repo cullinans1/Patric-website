@@ -5,13 +5,13 @@ const typeDefs = gql`
     _id: ID
     name: String
     email: String
-    posts: [Post]
+    blogs: [Blog]
   }
   type Auth {
     token: ID
     user: User
   }
-  type Post {
+  type Blog {
       _id: ID
       title: String
       image: String
@@ -20,7 +20,8 @@ const typeDefs = gql`
   }
 
   type Query {
-      posts: [Post]
+      blogs: [Blog]
+      user: [User]
   }
 
   type Mutation{
@@ -29,12 +30,12 @@ const typeDefs = gql`
         email: String!
         password: String!
     ): Auth
-    addPost(
+    addBlog(
         title: String!
         image: String
         content: String!
         link: String
-    ): Post
+    ): Blog
     login(
         email: String!, password: String!
     ): Auth

@@ -1,10 +1,13 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Post } = require("../models");
+const { User, Blog } = require("../models");
 const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
-    posts: async () => {
-      return await Post.find();
+    blogs: async () => {
+      return await Blog.find().populate("blogs");
+    },
+    user: async () => {
+      return await User.find().populate("user");
     },
   },
   Mutation: {
@@ -14,15 +17,15 @@ const resolvers = {
 
       return { user, token };
     },
-    addPost: async(parent, { postinfo }, context) => {
-      if (context.user){
-        const post = new Post({ postinfo });
-        await User.findOneAndUpdate(context.user._id, {
-          $push: { orders: order },
-        });
-        return post;
-      }
-      throw new AuthenticationError('Not authorized');
+    addBlog: async(parent, { title, content, image, link } , context) => {
+      // if (context.user){
+        const blog = new Blog({ title, content, image, link });
+        // await User.findOneAndUpdate(context.user._id, {
+        //   $push: { blogs: blog },
+        // });
+        return blog;
+      // }
+      // throw new AuthenticationError('Not authorized');
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
