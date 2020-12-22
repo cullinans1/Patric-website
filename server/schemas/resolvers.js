@@ -14,18 +14,14 @@ const resolvers = {
     addUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
-
-      return { user, token };
+      return { token, user };
     },
-    addBlog: async(parent, { title, content, image, link } , context) => {
-      // if (context.user){
-        const blog = new Blog({ title, content, image, link });
-        // await User.findOneAndUpdate(context.user._id, {
-        //   $push: { blogs: blog },
-        // });
-        return blog;
-      // }
-      // throw new AuthenticationError('Not authorized');
+    addBlog: async(parent, { title, content, image, link } , args) => {
+      console.log(args.headers.token)
+      if (args.headers.token) {
+        return await Blog.create({ title, content, image, link });
+      }
+      throw new AuthenticationError('Not authorized');
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -41,7 +37,7 @@ const resolvers = {
         throw new AuthenticationError("Incorrect Credentials");
       }
       const token = signToken(user);
-      return { user, token };
+      return { token, user };
     },
   },
 };
