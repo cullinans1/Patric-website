@@ -21,6 +21,7 @@ const typeDefs = gql`
 
   type Query {
       blogs: [Blog]
+      blog(_id: ID!): Blog
       user: [User]
   }
 

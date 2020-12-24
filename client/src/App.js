@@ -1,4 +1,8 @@
 import './App.css';
+import React from 'react';
+
+//importing pages
+import Home from './pages/Home';
 
 function App() {
   return (
@@ -7,6 +11,7 @@ function App() {
        PATRIC SEPULVEDA REALTOR
        <p>Coming soon</p>
       </header>
+      <Home />
     </div>
   );
 }
