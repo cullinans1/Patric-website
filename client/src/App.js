@@ -6,11 +6,11 @@ import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div>
+      {/* <header className="App-header">
        PATRIC SEPULVEDA REALTOR
        <p>Coming soon</p>
-      </header>
+      </header> */}
       <Home />
     </div>
   );

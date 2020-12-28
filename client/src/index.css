@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.jumbotron {
+  background-image: url('./assets/images/house.jpg');
+  position: relative;
+  left: 0;
+  height: 40rem;
+  width: 100%;
+  background-color: #000;
+  z-index: 1;
+  background-size: cover;
+  background-repeat: none;
+  background-position: center center;
+}
+
+.jumbotron h1,
+.jumbotron p {
+  background-color: rgba(53, 59, 65, 0.84);
+  padding-left: 1rem;
+  width: 20rem;
+}
+.jumbotron p {
+  width: 65%;
+}
