@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useMutation } from '@apollo/react-hooks';
-import { CONTACT_ME } from '../../utils/mutations';
+import { useMutation } from "@apollo/react-hooks";
+import { CONTACT_ME } from "../../utils/mutations";
 
 function Header() {
   const [formState, setFormState] = useState({
@@ -23,6 +23,9 @@ function Header() {
         },
       });
       console.log(contactResponse);
+      var thankYouMsg = document.querySelector('.thank-you')
+      thankYouMsg.removeAttribute('id');
+      
     } catch (e) {
       console.log(e);
     }
@@ -35,6 +38,7 @@ function Header() {
       [name]: value,
     });
   };
+
   return (
     <nav className="navbar navbar-dark bg-dark">
       <div id="small-info">
@@ -58,7 +62,7 @@ function Header() {
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
         >
-          <div className="modal-dialog">
+          <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
@@ -81,6 +85,7 @@ function Header() {
                       name="name"
                       type="name"
                       id="name"
+                      required
                       onChange={handleChange}
                     />
                   </div>
@@ -91,6 +96,7 @@ function Header() {
                       type="email"
                       id="email"
                       onChange={handleChange}
+                      required
                     />
                   </div>
                   <div className="form-group">
@@ -100,6 +106,7 @@ function Header() {
                       type="phone"
                       id="phone"
                       onChange={handleChange}
+                      required
                     />
                   </div>
                   <div className="form-group">
@@ -109,9 +116,13 @@ function Header() {
                       type="message"
                       id="message"
                       onChange={handleChange}
+                      required
                     />
                   </div>
                   <div className="modal-footer">
+                      <div className="thank-you" id='hidden'>
+                            <h3> Thanks we will be in touch </h3>
+                      </div>
                     <button
                       type="button"
                       className="btn btn-secondary"

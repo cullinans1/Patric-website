@@ -34,3 +34,7 @@ code {
 .jumbotron p {
   width: 65%;
 }
+
+#hidden {
+  display: none;
+}
