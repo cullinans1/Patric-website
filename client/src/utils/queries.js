@@ -24,3 +24,14 @@ export const QUERY_SINGLE_BLOG = gql`
   }
 `;
 
+export const GET_CLIENTS = gql`
+  query {
+    clients {
+      _id
+      name
+      email
+      phone
+      message
+    }
+  }
+`;

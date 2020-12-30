@@ -16,6 +16,22 @@ export const ADD_BLOG = gql`
   }
 `;
 
+export const CONTACT_ME = gql`
+  mutation contactMe(
+    $name: String!
+    $email: String!
+    $phone: Float!
+    $message: String!
+  ) {
+    contactMe(name: $name, email: $email, phone: $phone, message: $message) {
+      name
+      email
+      phone
+      message
+    }
+  }
+`;
+
 export const LOGIN = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {

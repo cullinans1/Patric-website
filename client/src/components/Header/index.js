@@ -19,6 +19,7 @@ function Header() {
           message: formState.message,
         },
       };
+      console.log(contactResponse);
     } catch (e) {
       console.log(e);
     }
@@ -70,62 +71,60 @@ function Header() {
                 </button>
               </div>
               <div className="modal-body">
-                <form>
-                  <div className="form-row">
-                    <div className="form-group col-12">
-                      <label htmlFor="inputFirstName">Name</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="inputFirstName"
-                      />
-                    </div>
-                    <div className="form-group col-12">
-                      <label htmlFor="inputLastName">Email</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="inputLastName"
-                      />
-                    </div>
-                  </div>
+                <form onSubmit={handleFormSubmit}>
                   <div className="form-group">
-                    <label htmlFor="inputNumber">Phone Number</label>
                     <input
-                      type="text"
-                      className="form-control"
-                      id="inputNumber"
+                      placeholder="Name"
+                      name="name"
+                      type="name"
+                      id="name"
+                      onChange={handleChange}
                     />
                   </div>
-                  <div className="form-row">
-                    <div className="form-group col-12">
-                      <label htmlFor="FormControlTextarea1">
-                        Send me a message{" "}
-                      </label>
-                      <textarea
-                        className="form-control"
-                        id="formControlTextarea1"
-                        rows="2"
-                      ></textarea>
-                    </div>
+                  <div className="form-group">
+                    <input
+                      placeholder="Email"
+                      name="email"
+                      type="email"
+                      id="email"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <input
+                      placeholder="Phone Number"
+                      name="phone"
+                      type="phone"
+                      id="phone"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <textarea
+                      placeholder="Enter Message Here"
+                      name="message"
+                      type="message"
+                      id="message"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="modal-footer">
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button
+                      type="submit"
+                      className="btn btn-secondary"
+                      id="submitBtn"
+                    >
+                      Submit
+                    </button>
                   </div>
                 </form>
-              </div>
-              <div className="modal-footer">
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  data-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  id="submitBtn"
-                >
-                  Submit
-                </button>
               </div>
             </div>
           </div>
