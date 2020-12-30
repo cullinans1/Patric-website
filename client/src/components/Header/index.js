@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useMutation } from '@apollo/react-hooks';
+import { CONTACT_ME } from '../../utils/mutations';
 
 function Header() {
   const [formState, setFormState] = useState({
@@ -7,18 +9,19 @@ function Header() {
     phone: "",
     message: "",
   });
+  const [addContact] = useMutation(CONTACT_ME);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      const contactResponse = {
+      const contactResponse = await addContact({
         variables: {
           name: formState.name,
           email: formState.email,
           phone: formState.phone,
           message: formState.message,
         },
-      };
+      });
       console.log(contactResponse);
     } catch (e) {
       console.log(e);

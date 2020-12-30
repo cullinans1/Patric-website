@@ -20,7 +20,7 @@ export const CONTACT_ME = gql`
   mutation contactMe(
     $name: String!
     $email: String!
-    $phone: Float!
+    $phone: String!
     $message: String!
   ) {
     contactMe(name: $name, email: $email, phone: $phone, message: $message) {

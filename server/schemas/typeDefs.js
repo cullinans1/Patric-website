@@ -22,7 +22,7 @@ const typeDefs = gql`
     _id: ID
     name: String
     email: String
-    phone: Float
+    phone: String
     message: String
   }
   type Query {
@@ -35,7 +35,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(name: String!, email: String!, password: String!): Auth
     addBlog(title: String!, image: String, content: String!, link: String): Blog
-    contactMe(name: String!, email: String!, phone: Float!, message: String!): Client
+    contactMe(name: String!, email: String!, phone: String!, message: String!): Client
     login(email: String!, password: String!): Auth
   }
 `;
