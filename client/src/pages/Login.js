@@ -30,9 +30,47 @@ function Login(props) {
     });
   };
 
-  return(
-      <div>
-          
+  return (
+    <div className="container-fluid" id="login-page">
+      <div className="row justify-content-center">
+        <div id="login-form">
+          <h2 id="login-title"> Login </h2>
+          <form className="card card-body" onSubmit={handleFormSubmit}>
+            <div className="form-group">
+              <input
+                placeholder="Email"
+                name="email"
+                type="email"
+                id="email"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <input
+                placeholder="Password"
+                name="password"
+                type="password"
+                id="password"
+                onChange={handleChange}
+              />
+            </div>
+            {error ? (
+              <div>
+                <p className="error-text">
+                  The Provided credentials are incorrent
+                </p>
+              </div>
+            ) : null}
+            <div className="form-group flex-end justify-item-center">
+              <button type="submit" className="btn btn-dark">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-  )
+    </div>
+  );
 }
+
+export default Login;
