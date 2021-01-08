@@ -128,7 +128,7 @@ function Header() {
                     </div>
                     <div className="modal-footer">
                       <div className="thank-you" id="hidden">
-                        <h3> Thanks we will be in touch </h3>
+                        <h4> Thanks we will be in touch! </h4>
                       </div>
                       <button
                         type="button"
