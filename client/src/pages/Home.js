@@ -2,6 +2,7 @@ import React from "react";
 import Auth from "../utils/auth";
 
 import Jumbotron from "../components/Jumbotron";
+// import Blog from '../components/Blogs';
 // import Header from '../components/Header';
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
       <div className="home-page">
         <Jumbotron />
         Normal people see this
+        
       </div>
     );
   }

@@ -15,6 +15,7 @@ const typeDefs = gql`
     _id: ID
     title: String
     image: String
+    description: String
     content: String
     link: String
   }
@@ -34,7 +35,7 @@ const typeDefs = gql`
 
   type Mutation {
     addUser(name: String!, email: String!, password: String!): Auth
-    addBlog(title: String!, image: String, content: String!, link: String): Blog
+    addBlog(title: String!, image: String, description: String!, content: String!, link: String): Blog
     contactMe(name: String!, email: String!, phone: String!, message: String!): Client
     login(email: String!, password: String!): Auth
   }

@@ -3,12 +3,14 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
-// import { Provider } from "react-redux";
+import { Provider } from "react-redux";
+import store from './utils/store';
 
 //importing pages
 import Home from "./pages/Home";
 import Header from "./components/Header";
-import Login from './pages/Login'
+import Login from "./pages/Login";
+import AllBlogs from "./pages/AllBlogs";
 
 const client = new ApolloClient({
   request: (operation) => {
@@ -27,11 +29,14 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Header />
-          <Switch>
-            <Route exact path = "/" component = {Home} />
-            <Route exact path = "/login" component = {Login} />
-          </Switch>
+          <Provider store={store}>
+            <Header />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/blogs" component={AllBlogs} />
+            </Switch>
+          </Provider>
         </div>
       </Router>
     </ApolloProvider>

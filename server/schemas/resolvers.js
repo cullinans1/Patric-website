@@ -23,10 +23,10 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addBlog: async (parent, { title, content, image, link }, args) => {
+    addBlog: async (parent, { title, description, content, image, link }, args) => {
       // console.log(args.headers.token);
       if (args.headers.token) {
-        return await Blog.create({ title, content, image, link });
+        return await Blog.create({ title, description, content, image, link });
       }
       throw new AuthenticationError("Not authorized");
     },
