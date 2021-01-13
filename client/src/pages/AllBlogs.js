@@ -28,7 +28,7 @@ function AllBlogs() {
 
   return (
     <div className="container-fluid">
-      <h2> B L O G S</h2>
+      <h2> Learn About Reality: </h2>
       {state.blogs.length ? (
         <div className="row blog-cards">
           {returnBlogs().map((blog) => (

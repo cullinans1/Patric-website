@@ -19,7 +19,7 @@ function Blog(blog) {
         <Link to={`blogs/${_id}`}>
           <p>Read Full Article INSERT ARROW HERE</p>
         </Link>
-        {link ? <p> Visit this article ARROW HERE {link} </p> : null}
+        {link ? <p> Visit this ARROW HERE <Link to = {link}>article</Link> </p> : null}
       </div>
     </div>
   );
