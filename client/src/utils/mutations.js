@@ -4,12 +4,32 @@ export const ADD_BLOG = gql`
   mutation addBlog(
     $title: String!
     $image: String
+    $description: String!
     $content: String!
     $link: String
   ) {
-    addBlog(title: $title, image: $image, content: $content, link: $link) {
+    addBlog(title: $title, image: $image, description: $description, content: $content, link: $link) {
       title
       image
+      content
+      link
+    }
+  }
+`;
+
+export const EDIT_BLOG = gql`
+  mutation editBlog(
+    $_id: ID!
+    $title: String
+    $image: String
+    $description: String
+    $content: String
+    $link: String
+  ) {
+    editBlog(title: $title, image: $image, description: $description, content: $content, link: $link) {
+      title
+      image
+      description
       content
       link
     }
