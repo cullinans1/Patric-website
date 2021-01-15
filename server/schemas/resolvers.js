@@ -35,7 +35,7 @@ const resolvers = {
       throw new AuthenticationError("Not authorized");
     },
     editBlog: async (parent, { _id, title, description, content, image, link }, args) => {
-      return await Blog.findOneAndUpdate({ _id }, {title, description, content, image, link}, {new: true});
+      return await Blog.findOneAndUpdate({ _id }, {title, description, content, image, link}, {new: false});
     },
     deleteBlog: async(parent, { _id }) => {
       return await Blog.findOneAndDelete({ _id });

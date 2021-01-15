@@ -6,6 +6,7 @@ export const QUERY_ALL_BLOGS = gql`
       _id
       title
       image
+      description
       content
       link
     }

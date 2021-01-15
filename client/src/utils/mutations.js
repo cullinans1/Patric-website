@@ -8,7 +8,13 @@ export const ADD_BLOG = gql`
     $content: String!
     $link: String
   ) {
-    addBlog(title: $title, image: $image, description: $description, content: $content, link: $link) {
+    addBlog(
+      title: $title
+      image: $image
+      description: $description
+      content: $content
+      link: $link
+    ) {
       title
       image
       content
@@ -26,12 +32,26 @@ export const EDIT_BLOG = gql`
     $content: String
     $link: String
   ) {
-    editBlog(title: $title, image: $image, description: $description, content: $content, link: $link) {
+    editBlog(
+      title: $title
+      image: $image
+      description: $description
+      content: $content
+      link: $link
+    ) {
       title
       image
       description
       content
       link
+    }
+  }
+`;
+
+export const DELETE_BLOG = gql`
+  mutation deleteBlog( $_id: ID! ){
+    deleteBlog( _id: $_id) {
+      _id
     }
   }
 `;

@@ -22,6 +22,7 @@ function AllBlogs() {
       });
     }
   }, [data, loading, dispatch]);
+
   function returnBlogs() {
     return state.blogs;
   }
