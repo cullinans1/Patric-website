@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Blog(blog) {
-  const { _id, title, image, decscription, content, link } = blog;
+  const { _id, title, image, decscription, link } = blog;
 
   return (
     <div className="card col-lg-4">
@@ -15,7 +15,7 @@ function Blog(blog) {
         <h4 className="card-title">{title}</h4>
       </div>
       <div className="card card-body">
-        <p id="blog-content">{decscription}</p>
+        <p id="blog-description">{decscription}</p>
         <Link to={`blogs/${_id}`}>
           <p>Read Full Article INSERT ARROW HERE</p>
         </Link>

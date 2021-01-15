@@ -51,6 +51,3 @@ function AllBlogs() {
   );
 }
 export default AllBlogs;
-// {/* {categories.map((categories, _id) => (
-//           <Category categories={categories} key={"category" + _id} />
-//         ))} */}
