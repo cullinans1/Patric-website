@@ -29,7 +29,7 @@ const resolvers = {
       args
     ) => {
       // console.log(args.headers.token);
-      if (args.headers.token) {
+      if (args) {
         return await Blog.create({ title, description, content, image, link });
       }
       throw new AuthenticationError("Not authorized");

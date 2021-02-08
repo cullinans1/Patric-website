@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Auth from '../../utils/auth'
+import Auth from "../../utils/auth";
 import { useMutation } from "@apollo/react-hooks";
 import { DELETE_BLOG } from "../../utils/mutations";
 
@@ -23,7 +23,7 @@ function Blog(blog) {
       }
     } else {
       event.preventDefault();
-      console.log("didn't delete");
+      console.log("Didn't delete");
     }
   };
 

@@ -12,6 +12,7 @@ import Header from "./components/Header";
 import Login from "./pages/Login";
 import AllBlogs from "./pages/AllBlogs";
 import SingleBlog from './pages/SingleBlog';
+import NewBlog from './pages/NewBlog';
 
 const client = new ApolloClient({
   request: (operation) => {
@@ -36,6 +37,7 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/blogs" component={AllBlogs} />
+              <Route exact path="/newblog" component={NewBlog} />
               <Route exact path ="/blogs/:id" component={SingleBlog} />
             </Switch>
           </Provider>
