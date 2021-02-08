@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { useQuery, useMutation } from "@apollo/react-hooks";
+import { useQuery } from "@apollo/react-hooks";
 import { useDispatch, useSelector } from "react-redux";
 import { QUERY_ALL_BLOGS } from "../utils/queries";
-import { EDIT_BLOG } from "../utils/mutations";
+// import { EDIT_BLOG } from "../utils/mutations";
 import { UPDATE_BLOGS } from "../utils/actions";
 import spinner from "../assets/images/spinner.gif";
 // import Blog from "../components/Blogs";

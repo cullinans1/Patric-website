@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Auth from "../utils/auth";
 // import { useDispatch, useSelector } from "react-redux";
 import { ADD_BLOG } from "../utils/mutations";
 import { useMutation } from "@apollo/react-hooks";
 // import spinner from "../assets/images/spinner.gif";
-import Blog from "../components/Blogs";
+// import Blog from "../components/Blogs";
 
 function NewBlog() {
-  const { _id, title, image, description, content, link } = Blog;
+  // const { _id, title, image, description, content, link } = Blog;
   const [formState, setFormState] = useState({
     title: "",
     image: "",
@@ -43,7 +43,7 @@ function NewBlog() {
     });
   };
 
-  if (Auth.loggedIn) {
+  if (Auth.loggedIn()) {
     return (
       <div className="container-fluid">
         <h2>Create a new blog</h2>
@@ -54,6 +54,7 @@ function NewBlog() {
           onSubmit={handleNewBlog}
         >
           <div className="form-group">
+            <label>Title</label>
             <input
               name="title"
               type="title"
@@ -62,6 +63,7 @@ function NewBlog() {
             ></input>
           </div>
           <div className="form-group">
+            <label>Image</label>
             <input
               name="image"
               type="text"
@@ -70,6 +72,7 @@ function NewBlog() {
             ></input>
           </div>
           <div className="form-group">
+            <label>Description</label>
             <textarea
               name="description"
               type="description"
@@ -78,6 +81,7 @@ function NewBlog() {
             ></textarea>
           </div>
           <div className="form-group">
+            <label>Content</label>
             <textarea
               name="content"
               type="content"
@@ -86,6 +90,7 @@ function NewBlog() {
             ></textarea>
           </div>
           <div className="form-group">
+            <label>Link</label>
             <input
               name="link"
               type="link"
@@ -102,6 +107,7 @@ function NewBlog() {
       </div>
     );
   } else {
+    return <div className="container-fluid">Error 404: Page not found!</div>;
   }
 }
 export default NewBlog;

@@ -11,7 +11,7 @@ function Blog(blog) {
   const handleDeleteBlog = async (event) => {
     event.preventDefault();
     let confirm = window.confirm("Are you sure?");
-    if (confirm == true) {
+    if (confirm === true) {
       try {
         await deleteBlog({
           variables: {

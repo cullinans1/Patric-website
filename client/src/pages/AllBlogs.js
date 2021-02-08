@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Auth from "../utils/auth";
+// import Auth from "../utils/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { useQuery } from "@apollo/react-hooks";
 import { QUERY_ALL_BLOGS } from "../utils/queries";
